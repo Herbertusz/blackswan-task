@@ -1,0 +1,150 @@
+/*
+    Document   : divselect
+    Created on : 2011.08.26.
+    Author     : Horváth Norbert
+    Description:
+        Divselect base style
+*/
+
+.divselect {
+	position: relative;
+	width: 90px;
+	outline-width: 0;
+}
+
+.divselect__input {
+	display: none;
+}
+
+.divselect__background {
+	display: block;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	z-index: 99;
+}
+
+.divselect__selector {
+	position: relative;
+	padding: 5px;
+	overflow: hidden;
+	color: #000000;
+	font-size: 16px;
+	outline-width: 0;
+    cursor: pointer;
+}
+.divselect__selector::before {
+	content: '';
+	position: absolute;
+	right: 8px;
+	top: 7px;
+	z-index: 1;
+	width: 10px;
+	height: 10px;
+    transform: rotate(45deg);
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid #000000;
+	border-left: 2px solid transparent;
+	border-right: 2px solid #000000;
+}
+.divselect__selector--readonly {
+	color: #aaaaaa;
+}
+.divselect__selector--disabled {
+	background-color: #eeeeee;
+	color: #aaaaaa;
+}
+.divselect__selector span {
+	position: relative;
+	top: -3px;
+}
+.divselect__selector--active {
+	background-position: bottom right;
+}
+.divselect__selector--active::after {
+	background-color: #e0e0e0;
+}
+
+.divselect__menu {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	max-height: 250px;
+	overflow: auto;
+	border: 1px solid #dcdcdc;
+	background-color: #ffffff;
+	position: absolute;
+	z-index: 100;
+}
+
+.divselect__group {
+
+}
+.divselect__group__title {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.divselect__item {
+	padding: 2px 2px 4px 4px;
+	color: #000000;
+	font-size: 16px;
+    cursor: pointer;
+}
+.divselect__item:active {
+	outline: 0 none transparent;
+}
+.divselect__item--readonly {
+
+}
+.divselect__item--disabled {
+	color: #aaaaaa;
+}
+.divselect__item span {
+	position: relative;
+	top: -3px;
+}
+.divselect__group .divselect__item {
+	padding-left: 14px;
+}
+.divselect__item:hover {
+	background-color: #e8e8e8;
+}
+.divselect__item--disabled:hover {
+	background-color: #ffffff;
+}
+.divselect__item--preselected {
+	background-color: #e8e8e8;
+	outline-width: 0;
+}
+
+/* Filter plugin */
+
+.divselect__filter {
+	margin-bottom: 3px;
+	padding: 3px;
+	width: 160px;
+	height: 16px;
+}
+.divselect__filter__input {
+	padding: 2px;
+	width: 140px;
+	height: 14px;
+	border: 1px solid #dcdcdc;
+	background-color: #ffffff;
+}
+.divselect__filter__reset {
+	color: #999999;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.divselect__filter__reset:hover {
+	color: #000000;
+}

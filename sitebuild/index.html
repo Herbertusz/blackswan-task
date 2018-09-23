@@ -8,6 +8,21 @@
         <!-- <link rel="shortcut icon" href="favicon.ico" /> -->
         <link rel="stylesheet" href="css/normalize.css" />
         <link rel="stylesheet" href="css/layout.min.css" />
+        <link rel="stylesheet" href="css/divselect.css" />
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/jquery.divselect-1.0.0.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('[name="language-select"]').divselect({
+                    optionTags : {
+    					'en' : '<img src="images/flag_en.png" /> #',
+    					'hu' : '<img src="images/flag_hu.png" /> #'
+    				}
+                });
+            });
+        </script>
 
         <title>SwanSky</title>
     </head>
