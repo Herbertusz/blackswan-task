@@ -8,6 +8,7 @@
         <!-- <link rel="shortcut icon" href="favicon.ico" /> -->
         <link rel="stylesheet" href="css/normalize.css" />
         <link rel="stylesheet" href="css/layout.min.css" />
+        <link rel="stylesheet" href="css/content.min.css" />
         <link rel="stylesheet" href="css/divselect.css" />
 
         <script src="js/jquery.min.js"></script>
@@ -20,6 +21,12 @@
     					'en' : '<img src="images/flag_en.png" /> #',
     					'hu' : '<img src="images/flag_hu.png" /> #'
     				}
+                });
+                $('[data-menu="open"]').click(function(){
+                    $('nav').show();
+                });
+                $('[data-menu="close"]').click(function(){
+                    $('nav').hide();
                 });
             });
         </script>
@@ -41,8 +48,12 @@
                         <option value="hu">HU</option>
                     </select>
                 </div>
+                <div class="menu" data-menu="open">
+                    <div></div>
+                </div>
             </div>
             <nav>
+                <div class="close" data-menu="close"></div>
                 <ul>
                     <li><a href="#" class="active">Home</a></li>
                     <li><a href="#">Destinations</a></li>
@@ -51,6 +62,10 @@
                     <li><a href="#">Weather</a></li>
                     <li><a href="#">Shopping</a></li>
                 </ul>
+                <select class="language-select" name="language-select">
+                    <option value="en" selected>EN</option>
+                    <option value="hu">HU</option>
+                </select>
             </nav>
         </header>
 

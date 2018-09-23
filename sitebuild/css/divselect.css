@@ -31,10 +31,12 @@
 
 .divselect__selector {
 	position: relative;
+    border-radius: 5px;
 	padding: 5px;
 	overflow: hidden;
 	color: #000000;
 	font-size: 16px;
+	background-color: #ffffff;
 	outline-width: 0;
     cursor: pointer;
 }

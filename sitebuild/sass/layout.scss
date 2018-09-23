@@ -27,6 +27,9 @@ body > header {
         margin: 0 auto;
         max-width: $desktop-width;
         height: 70px;
+        @media screen and (max-width: $breakpoint) {
+            height: 50px;
+        }
 
         h1 {
             padding: 0 0 0 40px;
@@ -38,6 +41,48 @@ body > header {
 
         .language-select-container {
             padding: 0 40px 0 0;
+            @media screen and (max-width: $breakpoint) {
+                display: none;
+            }
+        }
+
+        .menu {
+            position: relative;
+            background-color: $mobile-menu-bg-color;
+            width: 50px;
+            height: 50px;
+            @media screen and (min-width: $breakpoint + 1) {
+                display: none;
+            }
+
+            div {
+                position: absolute;
+                top: 16px;
+                right: 9px;
+                border-radius: 5px;
+                background-color: $menu-open-color;
+                width: 32px;
+                height: 4px;
+
+                &%beforeafter {
+                    position: absolute;
+                    border-radius: 5px;
+                    background-color: $menu-open-color;
+                    width: 100%;
+                    height: 4px;
+                    content: "";
+                }
+
+                &::before {
+                    @extend %beforeafter;
+                    top: 16px;
+                }
+
+                &::after {
+                    @extend %beforeafter;
+                    top: 8px;
+                }
+            }
         }
     }
 
@@ -46,9 +91,57 @@ body > header {
         display: block;
         background-color: $desktop-menu-bg-color;
         font-size: 16px;
+        @media screen and (max-width: $breakpoint) {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: $mobile-menu-bg-color;
+            padding: 50px 0 0 30px;
+            width: 250px;
+            height: 100%;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            @media screen and (min-width: $breakpoint + 1) {
+                display: none;
+            }
+
+            &%beforeafter {
+                display: block;
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                border-top: 2px solid $menu-close-color;
+                border-right: 2px solid $menu-close-color;
+                border-bottom: 2px solid $menu-close-color;
+                border-left: 2px solid $menu-close-color;
+                border-radius: 2px;
+                background-color: $menu-close-color;
+                width: 35px;
+                height: 0;
+                content: "";
+            }
+
+            &::before {
+                @extend %beforeafter;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                @extend %beforeafter;
+                transform: rotate(-45deg);
+            }
+        }
 
         .language-select {
             margin: 10px 0 0 0;
+            @media screen and (min-width: $breakpoint + 1) {
+                display: none;
+            }
         }
 
         ul {
@@ -60,16 +153,27 @@ body > header {
             padding: 0 80px;
             max-width: $desktop-width;
             height: 40px;
+            @media screen and (max-width: $breakpoint) {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0;
+                height: 300px;
+            }
 
             li {
                 list-style: none;
 
                 a {
                     color: $desktop-menu-color;
+                    @media screen and (max-width: $breakpoint) {
+                        color: $mobile-menu-color;
+                    }
 
                     &.active,
                     &:hover {
-                        color: $menu-active-color;
+                        @media screen and (min-width: $breakpoint + 1) {
+                            color: $menu-active-color;
+                        }
                     }
                 }
             }
@@ -115,10 +219,22 @@ body > footer {
         margin: 0 20px 0 0;
         color: $footer-link-color;
         font-size: 16px;
+        @media screen and (max-width: $breakpoint) {
+            display: block;
+            float: none;
+            margin: 10px 0;
+            text-align: center;
+        }
     }
 
     .copyright {
         float: right;
+        @media screen and (max-width: $breakpoint) {
+            display: block;
+            float: none;
+            margin: 30px 0 0 0;
+            text-align: center;
+        }
     }
 
 }
