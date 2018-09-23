@@ -1,0 +1,83 @@
+@import "variables";
+
+.content {
+
+    .banner {
+        text-align: center;
+
+        img {
+            border-radius: 7px;
+            box-shadow: 0 0 7px $content-banner-shadow-color;
+            width: 100%;
+            max-width: 728px;
+        }
+    }
+
+    .images {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 30px 0;
+        @media screen and (max-width: $breakpoint) {
+            flex-direction: column;
+            margin: 30px 0 0 0;
+        }
+
+        img {
+            border-radius: 7px;
+            width: 48%;
+            @media screen and (max-width: $breakpoint) {
+                margin-bottom: 30px;
+                width: 100%;
+            }
+        }
+
+    }
+
+    .list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 30px 0;
+        @media screen and (max-width: $breakpoint) {
+            flex-direction: column;
+            align-items: stretch;
+            margin: 0;
+        }
+
+        article {
+            flex: {
+                basis: 0;
+                grow: 1;
+            }
+            border-radius: 7px;
+            box-shadow: 0 0 7px $content-article-shadow-color;
+            background-color: $content-article-bg-color;
+            padding: 0 10px;
+
+            &:not(:first-child):not(:last-child) {
+                margin: 0 30px;
+                @media screen and (max-width: $breakpoint) {
+                    margin: 20px 0;
+                }
+            }
+
+            h2 {
+                margin-bottom: 5px;
+                font-weight: normal;
+            }
+
+            p {
+                margin-top: 5px;
+            }
+
+        }
+
+    }
+
+    .main {
+        margin: 30px 0;
+        color: $content-text-color;
+    }
+
+}
