@@ -1,0 +1,124 @@
+@import "variables";
+
+body {
+    background-color: $theme-bg-color;
+    color: $theme-color;
+    font: {
+        family: Arial, sans-serif;
+        size: 14px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+body > header {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 5px $menu-shadow-color;
+    width: 100%;
+
+    .topcontainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: $desktop-width;
+        height: 70px;
+
+        h1 {
+            padding: 0 0 0 40px;
+
+            img {
+                height: 45px;
+            }
+        }
+
+        .language-select-container {
+            padding: 0 40px 0 0;
+        }
+    }
+
+
+    nav {
+        display: block;
+        background-color: $desktop-menu-bg-color;
+        font-size: 16px;
+
+        .language-select {
+            margin: 10px 0 0 0;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            margin: 0 auto;
+            padding: 0 80px;
+            max-width: $desktop-width;
+            height: 40px;
+
+            li {
+                list-style: none;
+
+                a {
+                    color: $desktop-menu-color;
+
+                    &.active,
+                    &:hover {
+                        color: $menu-active-color;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.content {
+    background: {
+        attachment: fixed;
+        image: linear-gradient($content-gradient-color1, $content-gradient-color2);
+        repeat: no-repeat;
+    }
+
+    .aligner {
+        padding: 20px;
+    }
+}
+
+.aligner {
+    margin: 0 auto;
+    max-width: $desktop-width;
+}
+
+body > footer {
+    box-shadow: 0 0 6px $footer-shadow-color;
+    padding: 20px;
+    min-height: 60px;
+
+    .aligner {
+        padding: 0 30px;
+
+        &::after {
+            clear: both;
+            content: "";
+        }
+    }
+
+    a {
+        display: inline-block;
+        float: left;
+        margin: 0 20px 0 0;
+        color: $footer-link-color;
+        font-size: 16px;
+    }
+
+    .copyright {
+        float: right;
+    }
+
+}
