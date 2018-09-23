@@ -1,0 +1,15 @@
+{
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "AngularJS application",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Horváth Norbert",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.7.4",
+    "angular-route": "^1.7.4"
+  }
+}
