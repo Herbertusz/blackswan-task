@@ -1,0 +1,6 @@
+<div>
+    <strong>Name:</strong> {{ $ctrl.repo.name | uppercase }}<br />
+    <strong>Description:</strong> {{ $ctrl.repo.snippet }}<br />
+    <strong>Age:</strong> {{ $ctrl.repo.age }}<br />
+    <strong>Old:</strong> {{ $ctrl.repo.age &gt; 10 | checkmark }}
+</div>

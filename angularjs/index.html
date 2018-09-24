@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="App">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+        <meta name="theme-color" content="#000000" />
+
+        <!-- <link rel="shortcut icon" href="favicon.ico" /> -->
+        <link rel="stylesheet" href="app/normalize.css" />
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-grid.min.css" />
+
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.js"></script>
+        <script src="app/app.module.js"></script>
+        <script src="app/app.config.js"></script>
+        <script src="app/core/core.module.js"></script>
+        <script src="app/core/checkmark/checkmark.filter.js"></script>
+        <script src="app/repo-list/repo-list.component.js"></script>
+        <script src="app/repo-detail/repo-detail.module.js"></script>
+        <script src="app/repo-detail/repo-detail.component.js"></script>
+
+        <title>AngularJS app</title>
+    </head>
+    <body>
+
+        <div ng-view></div>
+
+    </body>
+</html>

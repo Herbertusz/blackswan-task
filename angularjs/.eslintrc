@@ -2,12 +2,12 @@
   "parserOptions": {
     "ecmaVersion": 2018,
     // set to "script" (default) or "module" if your code is in ECMAScript modules
-    "sourceType": "module",
+    "sourceType": "script",
     "ecmaFeatures": {
       // allow return statements in the global scope
       "globalReturn": false,
       //enable global strict mode (if ecmaVersion is 5 or greater)
-      "impliedStrict": true,
+      "impliedStrict": false,
       // enable JSX
       "jsx": true
     }
