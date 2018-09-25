@@ -1,20 +1,37 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3 search">
             <!--Sidebar content-->
-            <input type="text" ng-model="searchText" />
+            <input type="search" ng-model="searchText" ng-keypress="$ctrl.search(searchText, $event)" />
             <button ng-click="$ctrl.search(searchText)">Search</button>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-9 result">
             <!--Body content-->
-            <ul>
-                <li ng-repeat="repo in $ctrl.repositories | orderBy:$ctrl.orderProp">
-                    <a href="#!/repositories/{{ repo.id }}">
-                        <span>{{ repo.name }}</span>
-                    </a>
-                    <p>{{ repo.snippet }}</p>
-                </li>
-            </ul>
+            <table>
+                <tr>
+                    <th>Repository name</th>
+                    <th>Stargazers count</th>
+                    <th>Forks count</th>
+                    <th>Open issues count</th>
+                </tr>
+                <tr ng-repeat="repo in $ctrl.repositories | orderBy:$ctrl.orderProp">
+                    <td class="t-name">
+                        <strong>{{ repo.name }}</strong>
+                        <br />
+                        <a href="{{ repo.html_url }}" target="_blank">Open repository</a>
+                    </td>
+                    <td class="t-num">
+                        {{ repo.stargazers_count }}
+                    </td>
+                    <td class="t-num">
+                        {{ repo.forks_count }}
+                    </td>
+                    <td class="t-link">
+                        {{ repo.open_issues_count }}
+                        <a ng-if="repo.open_issues_count > 0" href="#!/repositories/issues/{{ repo.full_name }}">List issues</a>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>
