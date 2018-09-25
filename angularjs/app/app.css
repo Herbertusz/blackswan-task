@@ -1,0 +1,17 @@
+/**
+ * Global styles
+ */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+
+a {
+    color: #373fff;
+    text-decoration: none;
+}
+a:hover {
+    color: #000000;
+}
