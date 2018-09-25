@@ -2,7 +2,8 @@
     <div class="row">
         <div class="col-md-3 search">
             <!--Sidebar content-->
-            <input type="search" ng-model="searchText" ng-keypress="$ctrl.search(searchText, $event)" />
+            <span>Search by repository name</span>
+            <input type="search" ng-model="searchText" ng-keypress="$ctrl.search(searchText, $event)" placeholder="repository name" />
             <button ng-click="$ctrl.search(searchText)">Search</button>
         </div>
         <div class="col-md-9 result">
@@ -14,9 +15,12 @@
                     <th>Forks count</th>
                     <th>Open issues count</th>
                 </tr>
+                <tr ng-if="$ctrl.repositories.length === 0">
+                    <td colspan="4" class="t-none">No results</td>
+                </tr>
                 <tr ng-repeat="repo in $ctrl.repositories | orderBy:$ctrl.orderProp">
                     <td class="t-name">
-                        <strong>{{ repo.name }}</strong>
+                        <strong>{{ repo.full_name }}</strong>
                         <br />
                         <a href="{{ repo.html_url }}" target="_blank">Open repository</a>
                     </td>

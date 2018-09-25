@@ -2,6 +2,9 @@
 
 'use strict';
 
+/**
+ * Repository listing component
+ */
 angular.module('App').component('repoList', {
     templateUrl : 'app/repo-list/repo-list.template.html',
     controller : function($http, $routeParams, $location){
@@ -15,6 +18,7 @@ angular.module('App').component('repoList', {
                 $http.get(`https://api.github.com/search/repositories?q=${searchText}`)
                     .then(resp => {
                         if (resp.data.total_count > 0){
+                            // filter necessary properties into this.repositories
                             const displayProperties = [
                                 'id', 'name', 'full_name', 'html_url', 'stargazers_count',
                                 'forks_count', 'open_issues_count'

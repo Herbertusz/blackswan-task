@@ -1,11 +1,21 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-            <ul>
+        <div class="col-lg-8 offset-lg-2 content">
+            <h1>Open issues</h1>
+            <span ng-if="$ctrl.issues.length === 0">No results</span>
+            <ul class="issues">
                 <li ng-repeat="issue in $ctrl.issues">
                     <h2>{{ issue.title }}</h2>
                     <a href="{{ issue.html_url }}" target="_blank">Open issue</a>
-                    <p ng-bind-html="issue.body|nl2br"></p>
+                    <ul class="labels">
+                        <li>
+                            Labels:
+                        </li>
+                        <li ng-repeat="label in issue.labels" style="border-color: #{{ label.color }};">
+                            {{ label.name }}
+                        </li>
+                    </ul>
+                    <p ng-bind-html="issue.body | preformat"></p>
                 </li>
             </ul>
         </div>

@@ -1,0 +1,43 @@
+/**
+ * Style for repoList template
+ */
+
+.search {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.search span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.result {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.result table {
+    border-collapse: collapse;
+    background-color: #eeeeee;
+}
+.result table tr {
+    border-bottom: 1px solid #888888;
+}
+.result table tr:first-child {
+    border-bottom-width: 2px;
+}
+.result table tr th,
+.result table tr td {
+    padding: 5px 10px;
+}
+.result table tr td.t-none {
+    text-align: center;
+    font-style: italic;
+}
+.result table tr td.t-name {}
+.result table tr td.t-num {
+    text-align: right;
+}
+.result table tr td.t-link {
+    text-align: right;
+}
