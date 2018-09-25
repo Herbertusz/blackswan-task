@@ -2,4 +2,4 @@
 
 'use strict';
 
-angular.module('App', ['core', 'ngRoute', 'repoDetail']);
+angular.module('App', ['core', 'ngRoute', 'repoIssues', 'ngLocationUpdate']);

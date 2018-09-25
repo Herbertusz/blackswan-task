@@ -5,11 +5,11 @@
 angular.module('App').config(function($locationProvider, $routeProvider){
     $locationProvider.hashPrefix('!');
     $routeProvider
-        .when('/repositories', {
+        .when('/repositories/:searchText?', {
             template : '<repo-list></repo-list>'
         })
-        .when('/repositories/:repoId', {
-            template : '<repo-detail></repo-detail>'
+        .when('/repositories/issues/:authorName/:repoName', {
+            template : '<repo-issues></repo-issues>'
         })
         .otherwise('/repositories');
 });

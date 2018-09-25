@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <ul>
+                <li ng-repeat="issue in $ctrl.issues">
+                    <h2>{{ issue.title }}</h2>
+                    <a href="{{ issue.html_url }}" target="_blank">Open issue</a>
+                    <p ng-bind-html="issue.body|nl2br"></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
